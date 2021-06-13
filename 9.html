@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        function Showhour(val) {
+            //elem.value == "part" ? $(".text").show() : $(".text").hide();
+            if (val === "part")
+                document.getElementById('hours').style.display = 'block';
+            else
+                document.getElementById('hours').style.display = 'none';
+        }
+        function disable(val) {
+            //elem.value == "part" ? $(".text").show() : $(".text").hide();
+            if (val === "full" || val == "contract")
+                document.getElementById('hours').style.display = 'none';
+        }
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="9.php" method="POST" enctype="multipart/form-data">
+        Image<input type="file" name="img"><br><br>
+        <input type="number" name="eno" placeholder="Eno"><br><br>
+        <input type="text" name="fname" placeholder="First name"><br><br>
+        <input type="text" name="mname" placeholder="Middle name"><br><br>
+        <input type="text" name="lname" placeholder="Last name"><br><br>
+        <textarea name="address" id="" cols="30" rows="10"></textarea><br><br>
+        Gender<input type="radio" name="gender" id="" value="male">Male <input type="radio" name="gender" id=""
+            value="female">Female <br><br>
+        <input type="text" name="desig" id="" placeholder="Designation"><br><br>
+        <input type="number" name="phone" id="" placeholder="Phone"><br><br>
+
+        Emp Category<input type="radio" name="ecat" id="" value="part" onclick="Showhour(this.value)">Part Time
+        <input type="radio" name="ecat" id="" value="full" onclick= "disable(this.value)">Full Time
+        <input type="radio" name="ecat" id="" value="contract" onclick= "disable(this.value)">Contract <br><br>
+
+        <input type="text" name="hour" id="hours" placeholder="Hours" style="display: none;"><br><br>
+        <input type="number" name="basic" id="" placeholder="Basic"><br><br>
+        <input type="submit" name="submit" id="" value="submit">
+
+    </form>
+</body>
+
+</html>
